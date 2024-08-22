@@ -7,6 +7,15 @@ const morgan = require('morgan');
 const app = express();
 const PORT = process.env.PORT || 3010;
 
+// Connect to the SQLite database with error handling
+const db = new sqlite3.Database('./database.sqlite', (err) => {
+    if (err) {
+        console.error('Failed to connect to the database:', err.message);
+        process.exit(1); // Exit if the database connection fails
+    }
+});
+
+
 
 // Home route
 app.use("/", (req, res) => {
