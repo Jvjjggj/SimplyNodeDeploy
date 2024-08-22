@@ -18,11 +18,11 @@ const db = new sqlite3.Database(dbPath, (err) => {
 
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:3004', // Adjust according to your frontend URL
+    origin: '*', // Allows all origins - only for development, not production
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type'],
-    credentials: true // If needed for authentication or cookies
+    allowedHeaders: ['Content-Type']
 }));
+
 
 
 app.use(helmet());
