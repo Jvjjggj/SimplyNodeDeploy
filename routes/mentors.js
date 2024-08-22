@@ -1,7 +1,6 @@
 const express = require('express');
-const { getAllMentors } = require('../controllers/mentorsController');
-
 const router = express.Router();
+const { getAllMentors } = require('../controllers/mentorsController');
 
 module.exports = (db) => {
     router.get('/', getAllMentors(db));
