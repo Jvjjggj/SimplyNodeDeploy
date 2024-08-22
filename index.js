@@ -20,8 +20,10 @@ app.use(express.json());
 app.use(cors({
     origin: 'http://localhost:3004', // Adjust according to your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type']
+    allowedHeaders: ['Content-Type'],
+    credentials: true // If needed for authentication or cookies
 }));
+
 
 app.use(helmet());
 app.use(morgan('combined'));
