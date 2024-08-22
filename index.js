@@ -17,7 +17,12 @@ const db = new sqlite3.Database(dbPath, (err) => {
 });
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3004', // Adjust according to your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
+}));
+
 app.use(helmet());
 app.use(morgan('combined'));
 
