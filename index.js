@@ -18,7 +18,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
 
 app.use(express.json());
 app.use(cors({
-    origin: 'jakcarrercurve.ccbp.tech', // replace with your actual frontend URL
+    origin: 'jakcarrercurve.ccbp.tech',
     methods: 'GET,POST,PUT,DELETE',
     credentials: true
 }));
