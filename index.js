@@ -17,11 +17,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
 });
 
 app.use(express.json())
-app.use(cors({
-    origin: 'https://jakcarrercurve.ccbp.tech',
-    methods: 'GET,POST,PUT,DELETE',
-    credentials: true
-}));
+app.use(cors())
 
 
 app.use(helmet());
